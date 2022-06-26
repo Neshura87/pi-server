@@ -24,7 +24,7 @@ export default function Home() {
           <Link key="about" href="/about">        
             <a  className={styles.card}>
               <h2>About &rarr;</h2>
-              <p>Useless Info, don&apost bother</p>
+              <p>Useless Info, don&apos;t bother</p>
             </a>
           </Link>
 
