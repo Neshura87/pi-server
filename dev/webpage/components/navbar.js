@@ -14,8 +14,8 @@ const Navbar = () => {
   
   return (
       <nav className={styles.navbar}>
-        {navLinks.map((item) => (
-          <Link href={item.href}>
+        {navLinks.map((item, index) => (
+          <Link key={item.name} href={item.href}>
             <a className={router.pathname == item.href ? styles.navelem_active : styles.navelem}>{item.name}</a>
           </Link>
         ))}

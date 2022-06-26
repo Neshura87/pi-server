@@ -21,21 +21,21 @@ export default function Home() {
           Feel free to look around
         </p>
         <div className={styles.grid}>
-          <Link href="/about">        
+          <Link key="about" href="/about">        
             <a  className={styles.card}>
               <h2>About &rarr;</h2>
-              <p>Useless Info, don't bother</p>
+              <p>Useless Info, don&apost bother</p>
             </a>
           </Link>
 
-          <Link href="/servers">
+          <Link key="servers" href="/servers">
             <a className={styles.card}>
               <h2>Servers &rarr;</h2>
               <p>List of all available Servers</p>
             </a>
           </Link>
         
-          <Link href="/services">
+          <Link key="services" href="/services">
             <a className={styles.card}>
               <h2>Services &rarr;</h2>
               <p>List of available Services</p>

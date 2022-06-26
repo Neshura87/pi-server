@@ -28,7 +28,7 @@ export default function Home() {
         </p>
         <div className={styles.grid}>
           {serverList.map((item) => (
-            <Link href={item.href}>
+            <Link key={item.name} href={item.href}>
               <a className={styles.contentcard}>
                 <h2 >{item.name}</h2>
                 <p>{item.desc}</p>

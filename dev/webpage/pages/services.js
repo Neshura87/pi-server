@@ -39,7 +39,7 @@ export default function Home() {
         </p>
         <div className={styles.grid}>
           {serviceList.map((item) => (
-            <Link href={item.href}>
+            <Link key={item.name} href={item.href}>
               <a className={styles.contentcard}>
                 {item.name}
                 {item.desc}
