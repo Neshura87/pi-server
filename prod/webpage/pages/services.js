@@ -3,24 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
+import fsPromises from 'fs/promises'
+import path from 'path'
+import status from '../components/status'
 
-const serviceList = [
-  { name: <h2>Nextcloud</h2>, 
-    href: "https://nextcloud.neshura-server.net", 
-    desc: <p>Self-hosted Cloud Storage Service</p> },
-  { name: <h2>Komga</h2>, 
-    href: "https://komga.neshura-server.net", 
-    desc: <p>Self-hosted Comic Library.<br/><p className={styles.cardwarn}>Note: Registration only via Admin</p></p> },
-  { name: <h2>Calibre Web</h2>, 
-    href: "https://calibre.neshura-server.net", 
-    desc: <p>Self-hosted Cloud Storage Service</p> },
-  { name: <h2>Calibre Content Server</h2>, 
-    href: "https://calibre.neshura-server.net/server", 
-    desc: <p>Self-hosted Cloud Storage Service<br></br><p className={styles.cardwarn}>Note: Registration only via Admin</p></p> },
-]
-
-export default function Home() {
+function Services(props) {
   const router = useRouter()
+  const serviceList = props.services
   return (
     <div className={styles.container}>
       <Head>
@@ -41,8 +30,10 @@ export default function Home() {
           {serviceList.map((item) => (
             <Link key={item.name} href={item.href}>
               <a className={styles.contentcard}>
-                {item.name}
-                {item.desc}
+                <div className={styles.contenttitle} dangerouslySetInnerHTML={{ __html: item.name }}/>
+                <div className={status(item) == "Online" ? styles.contentonline : styles.contentoffline} dangerouslySetInnerHTML={{ __html: status(item)}}></div>
+                <div dangerouslySetInnerHTML={{ __html: item.desc }}/>
+                <div className={styles.cardwarn} dangerouslySetInnerHTML={{ __html: item.warn }}/>
               </a>
             </Link>
           ))}
@@ -51,3 +42,13 @@ export default function Home() {
     </div>
   )
 }
+
+export async function getServerSideProps() {
+  const filePath = path.join(process.cwd(), './confs/pages.json')
+  const jsonData = await fsPromises.readFile(filePath)
+  const list = JSON.parse(jsonData)
+
+  return {props: list}
+}
+
+export default Services

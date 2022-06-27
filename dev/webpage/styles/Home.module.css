@@ -112,6 +112,14 @@
   max-width: 80%;
 }
 
+.contentoffline {
+  color: var(--def-red);
+}
+
+.contentonline {
+  color: var(--def-green);
+}
+
 .contentcard {
   margin: 1rem;
   padding: 1rem;

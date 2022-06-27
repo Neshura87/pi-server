@@ -1,0 +1,31 @@
+{
+    "services": [
+        { 
+            "name": "<h2>Nextcloud</h2>", 
+            "href": "https://nextcloud.neshura-server.net", 
+            "desc": "<p>Self-hosted Cloud Storage Service</p>",
+            "type": "php"
+        },
+        { 
+            "name": "<h2>Komga</h2>", 
+            "href": "https://komga.neshura-server.net", 
+            "desc": "<p>Self-hosted Comic Library</p>",
+            "warn": "<p className={styles.cardwarn}>Note: Registration only via Admin</p>",
+            "type": "app"
+        },
+        { 
+            "name": "<h2>Calibre Web</h2>", 
+            "href": "https://calibre.neshura-server.net/web/", 
+            "desc": "<p>Self-hosted Cloud Storage Service</p>",
+            "type": "app"
+        },
+        { 
+            "name": "<h2>Calibre Content Server</h2>", 
+            "href": "https://calibre.neshura-server.net/server/", 
+            "desc": "<p>Self-hosted Cloud Storage Service</p>", 
+            "warn": "<p>Note: Registration only via Admin</p>",
+            "type": "app"
+        }
+    ]
+
+}

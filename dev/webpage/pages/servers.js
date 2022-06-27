@@ -8,7 +8,7 @@ const serverList = [
   { name: "Minecraft", href: "https://minecraft.neshura-server.net", desc: "View all currently available Minecraft Servers" },
 ]
 
-export default function Home() {
+export default function Servers() {
   const router = useRouter()
   return (
     <div className={styles.container}>
@@ -30,7 +30,7 @@ export default function Home() {
           {serverList.map((item) => (
             <Link key={item.name} href={item.href}>
               <a className={styles.contentcard}>
-                <h2 >{item.name}</h2>
+                <h2>{item.name}</h2>
                 <p>{item.desc}</p>
               </a>
             </Link>
