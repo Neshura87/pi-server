@@ -7,33 +7,31 @@ import path from 'path'
 function Servers(props) {
   const serverList = props.servers
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Neshura Servers</title>
         <meta charSet='utf-8' />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.main}>
-        <h1 className={styles.title}>
-          Server List
-        </h1>
+      <h1 className={styles.title}>
+        Server List
+      </h1>
 
-        <p className={styles.description}>
-          Lists all available Services, probably up-to-date
-        </p>
-        <div className={styles.grid}>
-          {serverList.map((item) => (
-            <Link key={item.name} href={item.href}>
+      <p className={styles.description}>
+        Lists all available Services, probably up-to-date
+      </p>
+      <div className={styles.grid}>
+        {serverList.map((item) => (
+          <Link key={item.name} href={item.href}>
             <a className={styles.contentcard}>
-              <div className={styles.contenttitle} dangerouslySetInnerHTML={{ __html: item.name }}/>
-              <div dangerouslySetInnerHTML={{ __html: item.desc }}/>
+              <div className={styles.contenttitle} dangerouslySetInnerHTML={{ __html: item.name }} />
+              <div dangerouslySetInnerHTML={{ __html: item.desc }} />
             </a>
           </Link>
-          ))}
-        </div>
+        ))}
       </div>
-    </div>
+    </>
   )
 }
 
@@ -42,7 +40,7 @@ export async function getServerSideProps() {
   const jsonData = await fsPromises.readFile(filePath)
   const list = JSON.parse(jsonData)
 
-  return {props: list}
+  return { props: list }
 }
 
 export default Servers

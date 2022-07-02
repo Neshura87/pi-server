@@ -1,12 +1,12 @@
 import Footer from './footer'
 import Navbar from './navbar'
 import styles from '/styles/Home.module.css'
-import useSWR from 'swr'
+import UseSWR from 'swr'
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json())
 
 function Layout({ children }) {
-  const { data, error } = useSWR('/api/navbar', fetcher)
+  const { data, error } = UseSWR('/api/navbar', fetcher)
 
   if (error) return <div>Failed to load data</div>
   if (!data) {

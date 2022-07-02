@@ -1,6 +1,10 @@
+.page {
+  width: 100%;
+  background-color: var(--black-0f);
+}
+
 .container {
   padding: 0 2rem;
-  background-color: var(--black-0f);
 }
 
 .main {
@@ -26,6 +30,7 @@
 }
 
 .navelem {
+  width: 1%;
   color: var(--def-blue);
   margin: 0.2rem;
   border: 1px solid;
@@ -41,6 +46,7 @@
 }
 
 .navelem_active {
+  width: 1%;
   color: var(--def-orange);
   margin: 0.2rem;
   border: 1px solid;

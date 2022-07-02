@@ -4,12 +4,73 @@
 
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  flex: 1;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid var(--def-blue);
+}
+
+.home {
+  width: 5%;
+  color: var(--def-blue);
+  margin: 0.2rem;
+  padding: 0 1rem;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home:hover {
+  color: var(--def-orange);
+}
+
+.navbar {
+  width: 95%;
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.navelem {
+  width: 1%;
+  color: var(--def-blue);
+  margin: 0.2rem;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.05;
+}
+
+.navelem:hover {
+  color: var(--def-orange);
+}
+
+.navelem_active {
+  width: 1%;
+  color: var(--def-orange);
+  margin: 0.2rem;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0.05;
 }
 
 .footer {
@@ -74,6 +135,8 @@
 }
 
 .card {
+  background-color: grey;
+  width: 80%;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
