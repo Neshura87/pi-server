@@ -5,26 +5,17 @@
 /dev/.pnp
 /dev/.pnp.js
 
-/prod/node_modules
-/prod/.pnp
-/prod/.pnp.js
+/prod
 
 # testing
 /dev/coverage
-
-/prod/coverage
 
 # next.js
 /dev/.next/
 /dev/out/
 
-/prod/.next/
-/prod/out/
-
 # production
 /dev/build
-
-/prod/build
 
 # misc
 .DS_Store
