@@ -7,6 +7,8 @@
 
 /prod
 
+/.gitignore.kate-swp
+
 # testing
 /dev/coverage
 
