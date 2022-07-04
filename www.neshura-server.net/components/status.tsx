@@ -1,14 +1,15 @@
-import UseSWR from 'swr'
+import useSWR from 'swr'
+import type { CustomLink } from '../interfaces/LinkTypes'
 
-const fetcher = (...args) => fetch(...args).then((res) => res)
+const fetcher = (url:string) => fetch(url).then(res => res.json())
 
-function status(app) {
+function status(app: CustomLink) {
 
   if (app.type === "php") {
     return ("Online")
   }
   else if (app.type === "app") {
-    const { data, error } = UseSWR(app.href, fetcher)
+    const { data, error } = useSWR(app.href, fetcher)
 
     if (error) return "Offline"
     if (!data) return "Loading"

@@ -4,6 +4,7 @@
 # do not track built files
 /.next
 *.tsbuildinfo
+next-env.d.ts
 
 # debug
 npm-debug.log*

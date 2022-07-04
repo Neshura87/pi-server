@@ -3,17 +3,19 @@ import Navbar from './navbar'
 import styles from '/styles/Home.module.css'
 import UseSWR from 'swr'
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json())
+const fetcher = (url:string) => fetch(url).then((res) => res.json())
 
-function Layout({ children }) {
+function Layout({ children }: {children: React.ReactNode} ):JSX.Element {
   const { data, error } = UseSWR('/api/navbar', fetcher)
 
-  if (error) return <div>Failed to load data</div>
+  let layout: JSX.Element = <></>
+
+  if (error) layout = <><div>Failed to load data</div></>
   if (!data) {
-    return 
+    layout = <></> 
   }
   if(data) {
-    return (
+    layout =
       <>
         <Navbar links={data.links} />
         <main className={styles.main}>
@@ -21,8 +23,9 @@ function Layout({ children }) {
         </main>
         <Footer />
       </>
-    );
   }
+
+  return layout
 }
 
 export default Layout;
