@@ -1,0 +1,15 @@
+# do not track installed modules
+/node_modules
+
+# do not track built files
+/.next
+*.tsbuildinfo
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# production
+/build
