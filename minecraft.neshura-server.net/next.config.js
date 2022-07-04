@@ -14,5 +14,12 @@ module.exports = {
 
     return config;
   },
-  reactStrictMode: true
+  reactStrictMode: true,
+  settings: {
+    'import/resolver': {
+      'node': {
+        'extensions': ['.js', '.jsx', '.ts', '.tsx']
+      }
+    }
+  }
 };
