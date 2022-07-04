@@ -1,0 +1,33 @@
+{
+  "v1182": {
+    "url": "minecraft.neshura-server.net",
+    "port": 25565,
+    "mods": [
+      {
+        "name": "Timber Mod",
+        "href": "https://www.curseforge.com/minecraft/mc-mods/timber-mod",
+        "version": "1.2.0"
+      },
+      {
+        "name": "Immersive Portals",
+        "href": "https://www.curseforge.com/minecraft/mc-mods/immersive-portals-mod",
+        "version": "1.4.5"
+      },
+      {
+        "name": "Macaw's Bridges",
+        "href": "https://www.curseforge.com/minecraft/mc-mods/macaws-bridges",
+        "version": "2.0.3"
+      },
+      {
+        "name": "Macaw's Fences and Walls",
+        "href": "https://www.curseforge.com/minecraft/mc-mods/macaws-fences-and-walls",
+        "version": "1.0.4"
+      },
+      {
+        "name": "Chipped",
+        "href": "https://www.curseforge.com/minecraft/mc-mods/chipped",
+        "version": "1.2"
+      }
+    ]
+  }
+}
