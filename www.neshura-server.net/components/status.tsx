@@ -1,7 +1,14 @@
-import useSWR from 'swr'
+import UseSWR from 'swr'
 import type { CustomLink } from '../interfaces/LinkTypes'
 
-const fetcher = (url:string) => fetch(url).then(res => res.json())
+const fetcher = async (
+    input: RequestInfo, 
+    init: RequestInit, 
+    ...args: any[]
+  ) => {
+    const res = await fetch(input, init);
+    return res;
+  };
 
 function status(app: CustomLink) {
 
@@ -9,15 +16,12 @@ function status(app: CustomLink) {
     return ("Online")
   }
   else if (app.type === "app") {
-    const { data, error } = useSWR(app.href, fetcher)
+    const { data, error } = UseSWR(app.href, fetcher)
 
     if (error) return "Offline"
     if (!data) return "Loading"
 
-    if (data.status == 200 || data.status == 301 || data.status == 302) {
-      console.log(data)
-      return "Online"
-    }
+    if (data.status == 200 || data.status == 301 || data.status == 302) return "Online"
     else return "Offline"
   }
   else { return ("ERROR") }
